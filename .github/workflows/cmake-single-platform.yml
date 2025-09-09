@@ -31,7 +31,7 @@ jobs:
       - name: Configure Release
         run: |
           Invoke-WebRequest 'https://raw.githubusercontent.com/KDE/craft/master/setup/install_craft.ps1' -OutFile install_craft.ps1
-          powershell -ExecutionPolicy Bypass -File .\install_craft.ps1
+          powershell -ExecutionPolicy Bypass -File .\install_craft.ps1 -root "C:\CraftRoot\"
 
       - name: Build
         run: |
