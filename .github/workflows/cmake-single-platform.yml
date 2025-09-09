@@ -37,5 +37,5 @@ jobs:
         run: |
           C:\hostedtoolcache\windows\Python\3.12.10\x64\python.exe C:\CraftRoot\craft-tmp\bin\craft.py --help
           C:\hostedtoolcache\windows\Python\3.12.10\x64\python.exe C:\CraftRoot\craft-tmp\bin\craft.py craft isoimagewriter
-          C:\hostedtoolcache\windows\Python\3.12.10\x64\python.exe C:\CraftRoot\craft-tmp\bin\craft.py craft package --target=25.08.0 isoimagewriter
+          C:\hostedtoolcache\windows\Python\3.12.10\x64\python.exe C:\CraftRoot\craft-tmp\bin\craft.py craft --package --target=25.08.0 isoimagewriter
 
