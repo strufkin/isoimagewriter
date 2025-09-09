@@ -20,7 +20,6 @@ jobs:
           target: 'desktop'
           host: 'windows'
           install-deps: 'true'
-          modules: 'extra-cmake-modules'
 
       - name: Setup MSVC environment
         uses: seanmiddleditch/gha-setup-vsdevenv@master
