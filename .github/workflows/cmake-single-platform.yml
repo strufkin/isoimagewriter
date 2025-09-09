@@ -27,14 +27,12 @@ jobs:
         with:
           arch: 'x64'
           
-      - name: Build
-        run: |
-          dir C:\
-          craft -i isoimagewriter
-          craft package --target=25.08.0 isoimagewriter
+
       - name: Configure Release
         run: |
-          iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/KDE/craft/master/setup/install_craft.ps1'))
+          pwd
+          
+          echo y | iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/KDE/craft/master/setup/install_craft.ps1'))
 
       - name: Build
         run: |
