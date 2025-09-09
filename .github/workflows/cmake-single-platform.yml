@@ -20,6 +20,7 @@ jobs:
           target: 'desktop'
           host: 'windows'
           install-deps: 'true'
+          modules: 'all'
 
       - name: Setup MSVC environment
         uses: seanmiddleditch/gha-setup-vsdevenv@master
