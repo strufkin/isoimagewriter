@@ -30,9 +30,8 @@ jobs:
 
       - name: Configure Release
         run: |
-          pwd
-          
-          echo y | iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/KDE/craft/master/setup/install_craft.ps1'))
+          Invoke-WebRequest 'https://raw.githubusercontent.com/KDE/craft/master/setup/install_craft.ps1' -OutFile install_craft.ps1
+          powershell -ExecutionPolicy Bypass -File .\install_craft.ps1
 
       - name: Build
         run: |
