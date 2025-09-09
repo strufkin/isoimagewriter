@@ -24,6 +24,7 @@ jobs:
 
       - name: Configure Release
         run: |
+          [Environment]::SetEnvironmentVariable('ANDROID_SDK_ROOT', [NullString]::Value, 'User')
           # choco install -y visualstudio2022buildtools --package-parameters "--add  Microsoft.VisualStudio.Component.VC.ATL"
           Invoke-WebRequest 'https://raw.githubusercontent.com/KDE/craft/dev/setup/install_craft.ps1' -OutFile install_craft.ps1
           .\install_craft.ps1 -root "C:\CraftRoot" -branch dev -use-defaults
