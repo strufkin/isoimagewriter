@@ -16,7 +16,6 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@v4.3.0
         with:
-          timeout-minutes: '10'
           target: 'desktop'
           host: 'windows'
           install-deps: 'true'
