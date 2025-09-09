@@ -1,0 +1,41 @@
+name: isoimagewriter
+
+on: [push]
+
+env:
+  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v3
+        with:
+          timeout-minutes: '10'
+          version: '5.15.2'
+          target: 'desktop'
+          host: 'windows'
+          arch: 'win64_msvc2019_64'
+          install-deps: 'true'
+          modules: 'extra-cmake-modules'
+
+      - name: Setup MSVC environment
+        uses: seanmiddleditch/gha-setup-vsdevenv@v3
+        with:
+          arch: 'x64'
+
+      - name: Configure Release
+        run: |
+          mkdir -p build
+          cd build
+          cmake -DROSA_BRANDING=ON ../
+
+      - name: Build
+        run: |
+          cd build
+          make
