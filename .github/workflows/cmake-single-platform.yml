@@ -21,14 +21,10 @@ jobs:
           install-deps: 'true'
           modules: 'all'
 
-      - name: Setup MSVC environment
-        uses: seanmiddleditch/gha-setup-vsdevenv@master
-        with:
-          arch: 'x64'
-          
 
       - name: Configure Release
         run: |
+          # choco install -y visualstudio2022buildtools --package-parameters "--add  Microsoft.VisualStudio.Component.VC.ATL"
           Invoke-WebRequest 'https://raw.githubusercontent.com/KDE/craft/dev/setup/install_craft.ps1' -OutFile install_craft.ps1
           .\install_craft.ps1 -root "C:\CraftRoot" -branch dev -use-defaults
 
